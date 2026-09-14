@@ -1,10 +1,10 @@
 from .config import get_default_config
 from .geometry import ProjectionGeometry, ReconstructionGrid
-from .model import ARP_CBCT, ARPCBCT, build_model
+from .model import PhysRay_CBCT, PhysRayCBCT, build_model
 
 __all__ = [
-    "ARP_CBCT",
-    "ARPCBCT",
+    "PhysRay_CBCT",
+    "APhysRayCBCT",
     "ProjectionGeometry",
     "ReconstructionGrid",
     "build_model",
