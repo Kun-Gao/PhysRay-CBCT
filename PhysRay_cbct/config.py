@@ -5,7 +5,7 @@ from typing import Any
 
 
 _MODEL_CONFIG: dict[str, Any] = {
-    "architecture": "arp_cbct",
+    "architecture": "PhysRay_cbct",
     "encoder_channels": [64, 96, 128, 192],
     "encoder_blocks_per_stage": 2,
     "encoder_view_chunk_size": 16,
@@ -55,6 +55,6 @@ _MODEL_CONFIG: dict[str, Any] = {
 
 
 def get_default_config() -> dict[str, Any]:
-    """Return an independent copy of the formal ARP-CBCT model config."""
+    """Return an independent copy of the formal PhysRay-CBCT model config."""
 
     return deepcopy(_MODEL_CONFIG)

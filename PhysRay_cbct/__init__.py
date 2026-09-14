@@ -4,7 +4,7 @@ from .model import PhysRay_CBCT, PhysRayCBCT, build_model
 
 __all__ = [
     "PhysRay_CBCT",
-    "APhysRayCBCT",
+    "PhysRayCBCT",
     "ProjectionGeometry",
     "ReconstructionGrid",
     "build_model",
