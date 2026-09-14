@@ -1,10 +1,10 @@
-# ARP-CBCT Model
+# PhysRay-CBCT Model
 
 This is the official PyTorch implementation of:
 
-**Measurement-Ray-Centric Sparse-View CBCT Reconstruction**
+**PhysRay-CBCT: Physics-Guided Ray-Primitive Reasoning for Sparse-View CBCT Reconstruction**
 
-This repository contains the complete ARP-CBCT architecture used for the reported 20-, 10-, and 5-view experiments. The complete implementation will be made publicly available upon acceptance of the paper.
+This repository contains the complete PhysRay-CBCT architecture used for the reported 20-, 10-, and 5-view experiments. The complete implementation will be made publicly available upon acceptance of the paper.
 
 ## What Is Included
 
@@ -21,7 +21,7 @@ This repository contains the complete ARP-CBCT architecture used for the reporte
 ## Repository Structure
 
 ```text
-arp_cbct/
+PhysRay_cbct/
 ├── __init__.py
 ├── config.py
 ├── geometry.py
@@ -55,10 +55,10 @@ The reported experiments used Python 3.10 and PyTorch 2.0.0 with CUDA 11.8.
 ## Model Construction
 
 ```python
-from arp_cbct import ARPCBCT, get_default_config
+from PhysRay_cbct import PhysRayCBCT, get_default_config
 
 config = get_default_config()
-model = ARPCBCT(config)
+model = PhysRayCBCT(config)
 ```
 
 The default configuration constructs the exact model used for the formal experiments, with 8,192 adaptive primitives and a multi-scale reconstruction hierarchy.
