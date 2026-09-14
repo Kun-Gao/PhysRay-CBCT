@@ -178,7 +178,7 @@ class PhysRayCBCT(nn.Module):
 
         if self.debug_assertions:
             if not torch.isfinite(residual).all() or not torch.isfinite(volume).all():
-                raise FloatingPointError("Non-finite ARP-CBCT volume output")
+                raise FloatingPointError("Non-finite PhysRay-CBCT volume output")
             if fov_violation_count:
                 raise AssertionError("Primitive outside common reconstruction FOV")
             if ray_deviation.max() > 2e-3:
@@ -225,13 +225,13 @@ class PhysRayCBCT(nn.Module):
         return output
 
 
-def build_model(config: dict[str, Any] | None = None) -> ARPCBCT:
+def build_model(config: dict[str, Any] | None = None) -> PhysRayCBCT:
     """Build the complete model used for the reported experiments."""
     cfg = get_default_config() if config is None else config
-    architecture = cfg.get("architecture", "arp_cbct")
-    if architecture != "arp_cbct":
+    architecture = cfg.get("architecture", "PhysRay_cbct")
+    if architecture != "PhysRay_cbct":
         raise ValueError(f"Unsupported architecture: {architecture!r}")
-    return ARPCBCT(cfg)
+    return PhysRayCBCT(cfg)
 
 
 PhysRay_CBCT = PhysRayCBCT
