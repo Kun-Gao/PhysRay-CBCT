@@ -21,9 +21,8 @@ from .models.primitive_query import MultiScalePrimitiveQuery
 from .models.primitive_refinement import PrimitiveRefinement
 
 
-class ARPCBCT(nn.Module):
-    """Adaptive Ray Primitive Representation for sparse-view CBCT.
-
+class PhysRayCBCT(nn.Module):
+    """
     Projection tensors have shape ``[B, V, 1, H, W]``. Volume arrays use
     z-y-x indexing; physical vectors use world x-y-z coordinates in mm.
     """
@@ -235,4 +234,4 @@ def build_model(config: dict[str, Any] | None = None) -> ARPCBCT:
     return ARPCBCT(cfg)
 
 
-ARP_CBCT = ARPCBCT
+PhysRay_CBCT = PhysRayCBCT
